@@ -31,7 +31,18 @@
           "since": {
             "type": "string"
           },
+          "type": {
+            "type": "string"
+          },
           "variables": {
+            "type": "array",
+            "default": [],
+            "items": {
+              "$ref": "#/definitions/elementPattern"
+            },
+            "additionalProperties": false
+          },
+          "properties": {
             "type": "array",
             "default": [],
             "items": {
@@ -132,6 +143,14 @@
         },
         "since": {
           "type": "string"
+        },
+        "isOptional": {
+          "type": "boolean"
+        },
+        "children": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/elementPattern"},
+          "default": []
         }
       },
       "required": [

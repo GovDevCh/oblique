@@ -5,6 +5,9 @@
 		<dd *ngIf="element.see">
 			See also: <a href="{{element.see}}" target="_blank">{{element.see}}</a>
 		</dd>
+		<dd *ngIf="element.isOptional">
+			<b>Optional</b>
+		</dd>
 		<dd *ngIf="element.type">
 			<b>Type:</b> <code>{{element.type}}</code>
 		</dd>
@@ -29,5 +32,11 @@
 			<b>Returns:</b> <code>{{element.returns}}</code>
 		</dd>
 		<dd><b>Since:</b> {{element.since}}</dd>
+		<dd *ngIf="element.children">
+			<b>Children:</b>
+			<ng-container *ngIf="element.children">
+				<ob-api-element [elements]="element.children"></ob-api-element>
+			</ng-container>
+		</dd>
 	</ng-container>
 </dl>
